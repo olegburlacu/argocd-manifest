@@ -1,0 +1,15 @@
+replicaCount: 1
+
+image:
+  repository: hashicorp/http-echo
+  tag: "0.2.3"
+  pullPolicy: IfNotPresent
+
+service:
+  type: ClusterIP
+  port: 80
+
+containerPort: 5678
+
+args:
+  - "-text=hello from argocd echo app (helm)"
